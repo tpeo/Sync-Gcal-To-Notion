@@ -1,0 +1,14 @@
+{
+  "name": "Notion-to-GCal",
+  "version": "1.0.0",
+  "description": "Syncs stuff",
+  "author": "Jonathan Wong",
+  "license": "MIT",
+  "dependencies": {
+    "docker-machine": "^3.0.0",
+    "serverless-google-cloudfunctions": "^3.1.1"
+  },
+  "devDependencies": {
+    "serverless-python-requirements": "^4.2.5"
+  }
+}

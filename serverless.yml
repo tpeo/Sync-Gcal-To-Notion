@@ -1,0 +1,30 @@
+service: TPEO-Notion-Gcal
+frameworkVersion: ">=1.1.0 <2.0.0"
+provider:
+  name: google
+  runtime: python3.7
+  region: us-east-1
+plugins:
+  - serverless-python-requirements
+  - serverless-google-cloudfunctions
+package:
+  exclude:
+    - .venv/**
+    - .git/**
+    - __pycache__/** # for python 3.x
+    - node_modules/**
+    - README.md
+    - serverless.yml
+    - package-lock.json
+    - package.json
+    - requirements/**
+    - requirements.txt
+
+functions:
+  syncNotionToGCal:
+    memorySize: 512
+    handler: custom.main
+    events:
+      - http:
+          path: user
+          method: get
